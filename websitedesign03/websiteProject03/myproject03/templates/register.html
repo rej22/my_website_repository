@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <style>
+              body{
+            text-align: center;
+            background-image: url("/static/images/footer_1.jpg");
+            color: white;
+        }
+        .form01{
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            padding: 7px;
+            height: 15px;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-bottom: 0px;
+            color: black;
+           }
+           .submit-form01{
+           text-align: center;
+           margin: 200px;
+           }
+
+        </style>
+
+    </head>
+
+    <body>
+          <div class="submit-form01">
+               <h1><i>Registration</i></h1>
+            <form action="register" method="post">
+                {% csrf_token %}
+                <input class="form01" type="text" name="username" placeholder="Enter your UserName"><br>
+                <input class="form01" type="text" name="first_name" placeholder="Enter your First name"><br>
+                <input class="form01" type="text" name="last_name" placeholder="Enter your Last name"><br>
+                <input class="form01" type="email" name="email" placeholder="Enter your email"><br>
+                <input class="form01" type="password" name="password" placeholder="Enter a password"><br>
+                <input class="form01" type="password" name="confirm_pswd" placeholder="Enter the password again"><br>
+                <input type="submit">
+            </form>
+
+          </div>
+
+           {% for msg in messages %}
+           <h3><i>{{msg}}</i></h3>
+           {% endfor %}
+    </body>
+</html>

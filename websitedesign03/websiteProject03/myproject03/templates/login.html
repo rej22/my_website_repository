@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <style>
+             body{
+            text-align: center;
+            background-image: url('/static/images/why.jpg');
+            color: white;
+        }
+        .form02{
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            padding: 7px;
+            height: 20px;
+            margin: 5px;
+            color: black;
+        }
+        .submit02{
+            width: 150px;
+            text-align: center;
+            padding: 7px;
+            margin: 5px;
+            background-color: grey;
+            color: whitesmoke;
+        }
+        .login-div{
+           text-align: center;
+           margin: 200px;
+
+        }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="login-div">
+            <h1><i>login</i></h1>
+              <form action="login" method="post">
+                  {% csrf_token %}
+                  <input class="form02" type="text" name="username" placeholder="Enter your Username">
+                  <input class="form02" type="password" name="password" placeholder="Enter your Password"><br>
+                  <input class="submit02" type="submit">
+              </form>
+
+        </div>
+          {% for msg in messages %}
+           <h3><i>{{msg}}</i></h3>
+           {% endfor %}
+
+    </body>
+</html>
